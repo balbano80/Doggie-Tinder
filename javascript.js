@@ -1,7 +1,6 @@
 // global variables
 
 var apiKey = '173d89b51a0bbcb9cdd81a9d2304fac7'
-// var url = 'https://api.petfinder.com/shelter.getPets';
 var url = 'https://api.petfinder.com/pet.find';
 var currentDog;
 var newDogArray = [];
@@ -14,11 +13,6 @@ function createRando() {
     return newDogArray[currentDog];
 }
 
-$(".button-test").on("click", function(){
-    newDogDisplay();
-    
-
-});
 
 function newDogDisplay(){
     newDogArray.splice(currentDog,1);
@@ -34,16 +28,13 @@ function newDogDisplay(){
     var dogImg = $("<img css='height: 350px'>")
     dogImg.attr('src', dogPic);
 
-    $("#test").html(dogImg);
-    $("#test").append("<ul><li>" + dogBreed + "</li><li>" + dogAge + "</li><li>" + dogSex + "</li><li>" + dogSize + "</li><li>" + dogZip + "</li></ul>");
+ 
+    $(".card-img-top").attr('src', dogPic);
+    $("#breed").html(dogBreed);
+    $("#age").html(dogAge);
+    $("#size").html(dogSize);
+    $("#sex").html(dogSex);
 }
-
-
-
-
-
-
-// on left or right keystrike
 
 $(document).keydown(function(e) {
     switch(e.which) {
@@ -60,7 +51,6 @@ $(document).keydown(function(e) {
     e.preventDefault(); // prevent the default action (scroll / move caret)
 });
 
-// location on this API is not effective
 
 function displayImage() {
 
@@ -105,9 +95,6 @@ function displayImage() {
             } else {
                 dogImg = "http://via.placeholder.com/500x500";
             }
-        
-            
-
 
 
            var doggyStuff = {
@@ -130,8 +117,6 @@ function displayImage() {
     });   
 
 };
-
-
 
 
 

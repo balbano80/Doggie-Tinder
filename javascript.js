@@ -1,44 +1,53 @@
 
 //AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs
-// var googleKey = "AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs";
-// var latLong = {};
-// var address1 ={
-//   $t: "1 Bolivar Drive",
-//   city: "Berkeley",
-//   state: "CA"
-// };
+var googleKey = "AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs";
+var latLong = {};
+var address1 ={
+  $t: "1 Bolivar Drive",
+  city: "Berkeley",
+  state: "CA"
+};
 
-// var add = address1.$t.split(" ");// splitting address1 object into array to feed to queryUrl
+var add = address1.$t.split(" ");// splitting address1 object into array to feed to queryUrl
 
-// var queryUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" + add[0] + "+" + add[1] + "+" + add[2] + ",+" + address1.city + ",+" + address1.state + "&key=" + googleKey;
-// console.log(queryUrl);
-// "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=" + googleKey,
-// $.ajax({
-//   url: queryUrl,
-//   method: "Get"
-// }).then(function(response){
-//   // console.log(response);
-//   // console.log(response.results[0].geometry.location);
-//   latLong = response.results[0].geometry.location;
-//   console.log("latLong: " + latLong);
-// })
-// //google geocode api(converting address to latitude and longitude) to feed to google maps
+var queryUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" + add[0] + "+" + add[1] + "+" + add[2] + ",+" + address1.city + ",+" + address1.state + "&key=" + googleKey;
+console.log(queryUrl);
+//"https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=" + googleKey,
+$.ajax({
+  url: queryUrl,
+  method: "Get"
+}).then(function(response){
+  // console.log(response);
+  // console.log(response.results[0].geometry.location);
+  latLong = response.results[0].geometry.location;
+  console.log("latLong: " + latLong);
+})
+//google geocode api(converting address to latitude and longitude) to feed to google maps
 
-// function initMap() {
-//   console.log("initMap: " + latLong);
-//   var uluru = latLong;
-//   var map = new google.maps.Map(document.getElementById('map'), {
-//     zoom: 12,
-//     center: uluru
-//   });
-//   var marker = new google.maps.Marker({
-//     position: uluru,
-//     map: map
-//   });
-// }
+function initMap() {
+  console.log("initMap: " + latLong);
+  var uluru = latLong;
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: uluru
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+    title: 'Uluru (Ayers Rock)'
+  });
+  var contentString = "<p>add[0] + ' ' + add[1] + ' ' + add[2] <p>";
+  console.log(contentString);
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    marker.info.open(map, marker);
+  });
+}
 //google maps required function
 
-var apiKey = '8cfea2945d846ffc51b257d11ac8cc97';
+//var apiKey = '8cfea2945d846ffc51b257d11ac8cc97';
 // var url = 'https://api.petfinder.com/pet.find';
 // var dogArr = [];
 // var zip = "94701";

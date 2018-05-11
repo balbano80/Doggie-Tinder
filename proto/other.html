@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+</head>
+<style>
+
+    html {
+  position: relative;
+  min-height: 100%;
+}
+.card{
+    margin: 0 auto;
+}
+.glyphicon{
+    background: url("glyphicons-3-dog.png") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:40px;   
+    height: 100px;
+    width: 100px;
+    background-color: #5bc0de;
+    border-radius: 50px; 
+    margin-right: 25px;
+    cursor: pointer;
+}
+button:focus{
+    outline: none;
+}
+.glyphicon_two{
+    background-image: url("glyphicons-212-arrow-right.png") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px;
+    height: 100px;
+    width: 100px;
+    background-color: #f0ad4e;
+    border-radius: 50px; 
+    cursor: pointer;
+
+}
+body{
+    background-color:cadetblue;
+}
+#tag{
+    background-color: #C4C4C4;
+}
+.textCard{
+    width: 50%;
+    margin: 0 auto;
+}
+.row{
+    font-family: 'Pacifico', cursive;
+
+}
+.mainButtons{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fluid-container{
+    background-color: #C4C4C4;
+    text-align: center;
+    padding: 0;
+    height: 100px;
+    margin-top: 10px;  
+}
+.logo{
+width: 200px;
+}
+.card-img-top{
+    border: 20px solid #C4C4C4;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px; /* Set the fixed height of the footer here */
+  line-height: 80px; /* Vertically center the text there */
+  background-color: #C4C4C4;
+}
+
+.row {
+    position: relative;
+}
+
+.test{
+    position: absolute;
+    right: 40px;
+}
+
+
+</style>
+<body>
+
+<div class="container-fluid">
+</div>
+<div class="card" style="width:45%;" >
+        <span id="tag">
+            <img class="card-img-top" src="https://host.urbo.com/image/upload/w_1000,q_auto,c_fill/v1492101941/n2x8k61hhtudxvlkyzjj.jpg" alt="Card image cap" > 
+                <!-- <div class="textCard">      -->
+                        <div class="row">
+                            <h2 style="margin-left: 35px">Breed: <span id="breed"> Lab </span></h2> 
+                            <h2 class="test">Age: <span id="breed"> Young </span></h2> 
+                        </div>
+                        <div class="row">
+                                <h2 style="margin-left: 35px">Size: <span id="breed"> Small </span></h2> 
+                                <h2 class="test">Sex: <span id="breed"> Male </span></h2> 
+                            </div>
+                        <!-- <div class="row">
+                             <h2 class="test">Breed: <span id="breed"> Lab </span></h2> 
+                        </div> -->
+                <div class="textCard">  
+                     <div class="mainButtons">
+                            <button type="button" class="glyphicon"></button> 
+                            <button type="button" class="glyphicon_two"></button> 
+                       </div>
+                 </div>
+        </span>
+    </div>
+   <footer class="footer text-center">
+        <div class="container">
+          <img src="dog.png" class="logo"/>
+        </div>
+    </footer>
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

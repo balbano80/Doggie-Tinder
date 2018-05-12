@@ -118,6 +118,8 @@ function displayImage() {
 
 };
 
-
+$(document).on("click", "goBtn", function(){
+    
+})
 
 displayImage();

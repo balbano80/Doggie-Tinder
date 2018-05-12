@@ -118,8 +118,13 @@ function displayImage() {
 
 };
 
-$(document).on("click", "goBtn", function(){
-    
-})
+setTimeout(function(){
+    $(document).on("click", "#next", function(){
+    newDogDisplay();
+    });
+}, 4000);
+    // On click listener that will navigate through the dog array when hit(same as left or right arrow key).
+    // I put this in a setTimeout function, because errors will show up if hit while the page is waiting for the
+    // petfinder api to return the data and populate the array
 
 displayImage();

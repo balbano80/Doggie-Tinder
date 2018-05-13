@@ -146,11 +146,11 @@ function latLong(){
         method: "GET"
     }).then(function(response){
         console.log(response);
-        console.log(response.results[0].geometry.location);
-    })
-  }
-
-  latLong();
+        var loc = response.results[0].geometry.location;
+        initMap(loc);
+    });
+    
+    } // calling google geocode api and feeding it an address.  Then calling google maps function(initMap), and feeding it the geolocation(lat and long coordinates)
 
 function initMap(location) {
     var uluru = location;
@@ -164,18 +164,9 @@ function initMap(location) {
     });
   }
 
-  function latLong(){
-
-    $.ajax({
-        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + streetArr[0] + "+ " + streetArr[1] + "+" + streetArr[2] + ",+" + address.city + ",+" + address.stte + "&key=" + APIkey,
-        method: "GET"
-    }).then(function(response){
-        console.log(response);
-        var loc = response.results[0].geometry.location;
-        initMap(loc);
-    });
-
-  }
-
   latLong();
+
+ //need an on click listener for swiping page - like button
+    // will take current dog(newdog variable) and display pic and info on upper-left corner of dispaly page
+    // will also need to take the address(if any) from the dog object and plug into latLong function
 

@@ -128,3 +128,54 @@ setTimeout(function(){
     // petfinder api to return the data and populate the array
 
 displayImage();
+
+var address = {
+    $t: "2700 Ninth Street",
+    city: "Berkeley",
+    stte: "CA"
+}; // $t is a sample address from the petfinder api(contact section/object)
+
+var streetArr = address.$t.split(" ");
+
+var APIkey = "AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs";
+
+function latLong(){
+
+    $.ajax({
+        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + streetArr[0] + "+ " + streetArr[1] + "+" + streetArr[2] + ",+" + address.city + ",+" + address.stte + "&key=" + APIkey,
+        method: "GET"
+    }).then(function(response){
+        console.log(response);
+        console.log(response.results[0].geometry.location);
+    })
+  }
+
+  latLong();
+
+function initMap(location) {
+    var uluru = location;
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 12,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+  }
+
+  function latLong(){
+
+    $.ajax({
+        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + streetArr[0] + "+ " + streetArr[1] + "+" + streetArr[2] + ",+" + address.city + ",+" + address.stte + "&key=" + APIkey,
+        method: "GET"
+    }).then(function(response){
+        console.log(response);
+        var loc = response.results[0].geometry.location;
+        initMap(loc);
+    });
+
+  }
+
+  latLong();
+

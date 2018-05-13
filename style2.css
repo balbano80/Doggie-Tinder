@@ -71,6 +71,7 @@ html {
   }
   .card-img-top{
       border: 20px solid 	#C4C4C4;
+      
   }
   .footer {
     position: absolute;
@@ -91,7 +92,7 @@ html {
   }
 
   img.card-img-top {
-    max-height: 550px;
+    max-height: 430px;
 
 }
 

@@ -1,0 +1,87 @@
+/* Background image - demo */
+    
+body  {
+
+    padding: 0;
+    margin: 0;
+    background-image: url("images/dog_owner_1.jpg");
+    background-color: linear-gradient( rgba(0, 0, 0, 0.687), rgba(0, 0, 0, 0.5) );
+    background-position:center top;
+
+}
+
+.container {
+
+    position: absolute;
+    width: 800px;
+    height: 150px;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    color: white;
+    font-size: 5em;
+    font-family: 'Comic Sans', sans-serif;	
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+p {
+    color: white;
+    font-size: 1.1em;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+ .container2 {
+
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#user-start {
+    background-color: white;
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#start-app {
+    background-color: white;
+    float: left;
+    width: 100px;
+
+}
+
+
+.jumbotron{
+
+background-color: #C4C4C4;
+/* #f5f5f5; */
+text-align: center;
+padding: 0;
+height: 100px;
+margin-top: 0px;  
+
+}
+
+.logo{
+
+width: 200px;
+
+}

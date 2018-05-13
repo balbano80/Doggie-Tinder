@@ -1,0 +1,166 @@
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  .card{
+      margin: 0 auto;
+      background-color: #C4C4C4; 
+  }
+  .glyphicon{
+      background: url("images/glyphicons-3-dog.png") ;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size:40px;   
+      height: 100px;
+      width: 100px;
+      background-color: #5bc0de;
+      border-radius: 50px; 
+      margin-right: 25px;
+      cursor: pointer;
+  }
+  button:focus{
+      outline: none;
+  }
+  .glyphicon_two{
+      background-image: url("images/glyphicons-212-arrow-right.png") ;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 40px;
+      height: 100px;
+      width: 100px;
+      background-color: #f0ad4e;
+      border-radius: 50px; 
+      cursor: pointer;
+  
+  }
+  body{
+      background-color:cadetblue;
+  }
+  #tag{
+      background-color: 	#fbf7f5;
+  }
+  .textCard{
+      width: 50%;
+      margin: 0 auto;
+  }
+  .row{
+      font-family: 'Pacifico', cursive;
+  
+  }
+  .mainButtons{
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .fluid-container{
+      background-color: #fbf7f5;
+      text-align: center;
+      padding: 0;
+      height: 100px;
+      margin-top: 10px;  
+  }
+
+  .container {
+    height: 60px;
+  }
+
+  .logo{
+  width: 150px;
+  height: 60px;
+  }
+  .card-img-top{
+      border: 20px solid 	#fbf7f5;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Set the fixed height of the footer here */
+    line-height: 60px; /* Vertically center the text there */
+    background-color: 	#C4C4C4;
+  }
+  
+  .row {
+      position: relative;
+  }
+  
+  .test{
+      position: absolute;
+      right: 40px;
+  }
+
+  img.card-img-top {
+    max-height: 550px;
+
+}
+
+.info {
+    font-size: 22px;
+}
+
+@media screen and (max-width: 900px) {
+    h2 {
+        font-size: 20px;
+    }
+    .glyphicon{
+    height: 80px;
+    width:  80px;
+    background-size: 30px;
+        
+    }
+    .glyphicon_two{
+    height: 80px;
+    width:  80px;  
+    background-size: 30px;
+      
+    }
+    .logo{
+        width: 160px;
+        }
+        .card{
+    width: 75%;
+    margin: 0 auto;
+}
+}
+@media screen and (max-width: 620px) {
+    h2 {
+        font-size: 15px;
+    }
+    .glyphicon{
+    height: 50px;
+    width:  50px; 
+    background-size: 20px;
+       
+    }
+    .glyphicon_two{
+    height: 50px;
+    width:  50px;        
+    background-size: 20px;
+    }
+    .card{
+    width: 90%;
+    margin: 0 auto;
+}
+}
+@media screen and (max-width: 450px) {
+    h2 {
+        font-size: 10px;
+    }
+    .glyphicon_two {
+    height: 30px;
+    width:  30px; 
+    background-size: 10px;
+       
+    }
+    .glyphicon{
+    height: 30px;
+    width:  30px;
+    background-size: 10px;
+      
+    }
+    .card{
+    width: 100%;
+    margin: 0 auto;
+}
+}

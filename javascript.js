@@ -4,6 +4,7 @@ var apiKey = '173d89b51a0bbcb9cdd81a9d2304fac7'
 var url = 'https://api.petfinder.com/pet.find';
 var currentDog;
 var newDogArray = [];
+var photo = $(".card-img-top");
 
 
 
@@ -15,6 +16,7 @@ function createRando() {
 
 
 function newDogDisplay(){
+    
     newDogArray.splice(currentDog,1);
     var newDog = createRando();
     console.log(newDog);
@@ -28,28 +30,50 @@ function newDogDisplay(){
     var dogImg = $("<img css='height: 350px'>")
     dogImg.attr('src', dogPic);
 
- 
+  
     $(".card-img-top").attr('src', dogPic);
     $("#breed").html(dogBreed);
     $("#age").html(dogAge);
     $("#size").html(dogSize);
     $("#sex").html(dogSex);
+    // $("#tag").removeClass('magictime boingInUp');
+    
+
+
 }
+
 
 $(document).keydown(function(e) {
     switch(e.which) {
         case 37: // left
-        newDogDisplay();
         break;
 
         case 39: // right
         newDogDisplay();
+        checkAnimation();
         break;
 
         default: return; // exit this handler for other keys
     }
     e.preventDefault(); // prevent the default action (scroll / move caret)
 });
+
+function checkAnimation() {
+        //delay remove/add class so the DOM can catch up
+         $("#tag").removeClass('magictime boingInUp').delay(25).queue(
+            function (next) {
+                $(this).addClass('magictime boingInUp');
+                next();
+            }
+        );
+
+        // $("#tag").removeClass('magictime spaceInLeft').delay(25).queue(
+        //     function (next) {
+        //         $(this).addClass('magictime spaceInLeft');
+        //         next();
+        //     }
+        // );
+};
 
 
 function displayImage() {
@@ -63,7 +87,7 @@ function displayImage() {
             // id: 'CA387',
             animal: 'dog',
             location: '94701',
-            count: 500,
+            count: 50,
             output: 'basic',
             format: 'json'
         },    
@@ -93,7 +117,7 @@ function displayImage() {
             if (dogInfo[i].media.photos) {
                 var dogImg = (dogInfo[i].media.photos.photo[2]['$t']);
             } else {
-                dogImg = "http://via.placeholder.com/500x500";
+                dogImg = "images/dogFiller.jpg";
             }
 
 
@@ -111,16 +135,20 @@ function displayImage() {
         }
         
         console.log(newDogArray);
+        
 
        }       
-
-    });   
+       
+    });  
+    
+    
 
 };
 
 setTimeout(function(){
     $(document).on("click", "#next", function(){
-    newDogDisplay();
+    checkAnimation();
+    newDogDisplay();  
     });
 }, 4000);
     // On click listener that will navigate through the dog array when hit(same as left or right arrow key).
@@ -128,3 +156,4 @@ setTimeout(function(){
     // petfinder api to return the data and populate the array
 
 displayImage();
+

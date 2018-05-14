@@ -39,9 +39,7 @@ html {
   }
   body{
       /* background-color:cadetblue; */
-    background: url("images/dogback.jpg");
-    background-size: auto;
-    background-repeat: no-repeat; 
+    background-color:#F2F4F4;
 }
   #tag{
       background-color: #C4C4C4;

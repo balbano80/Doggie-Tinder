@@ -4,6 +4,18 @@ var apiKey = '173d89b51a0bbcb9cdd81a9d2304fac7'
 var url = 'https://api.petfinder.com/pet.find';
 var currentDog;
 var newDogArray = [];
+var photo = $(".card-img-top");
+
+// trying to get audio to play on the click button with the dog
+$('#woof').on('click', function(event){
+    event.preventDefault();
+    var music = document.createElement("audio");
+    music.setAttribute("src", "images/deepbark.mp3");
+    music.play(); 
+    setTimeout(function(){
+        window.location.href = "details.html"
+    }, 500)
+})
 
 
 
@@ -15,6 +27,7 @@ function createRando() {
 
 
 function newDogDisplay(){
+    
     newDogArray.splice(currentDog,1);
     var newDog = createRando();
     console.log(newDog);
@@ -28,28 +41,50 @@ function newDogDisplay(){
     var dogImg = $("<img css='height: 350px'>")
     dogImg.attr('src', dogPic);
 
- 
+  
     $(".card-img-top").attr('src', dogPic);
     $("#breed").html(dogBreed);
     $("#age").html(dogAge);
     $("#size").html(dogSize);
     $("#sex").html(dogSex);
+    // $("#tag").removeClass('magictime boingInUp');
+    
+
+
 }
+
 
 $(document).keydown(function(e) {
     switch(e.which) {
         case 37: // left
-        newDogDisplay();
         break;
 
         case 39: // right
         newDogDisplay();
+        checkAnimation();
         break;
 
         default: return; // exit this handler for other keys
     }
     e.preventDefault(); // prevent the default action (scroll / move caret)
 });
+
+function checkAnimation() {
+        //delay remove/add class so the DOM can catch up
+         $("#tag").removeClass('magictime boingInUp').delay(25).queue(
+            function (next) {
+                $(this).addClass('magictime boingInUp');
+                next();
+            }
+        );
+
+        // $("#tag").removeClass('magictime spaceInLeft').delay(25).queue(
+        //     function (next) {
+        //         $(this).addClass('magictime spaceInLeft');
+        //         next();
+        //     }
+        // );
+};
 
 
 function displayImage() {
@@ -63,7 +98,7 @@ function displayImage() {
             // id: 'CA387',
             animal: 'dog',
             location: '94701',
-            count: 500,
+            count: 50,
             output: 'basic',
             format: 'json'
         },    
@@ -77,6 +112,7 @@ function displayImage() {
         for (var i =0; i < dogInfo.length; i++) {
             var breed = [];
             var age;
+
 
             if (dogInfo[i].breeds.breed === undefined) {
                 breed.push("mix");
@@ -93,7 +129,7 @@ function displayImage() {
             if (dogInfo[i].media.photos) {
                 var dogImg = (dogInfo[i].media.photos.photo[2]['$t']);
             } else {
-                dogImg = "http://via.placeholder.com/500x500";
+                dogImg = "images/dogFiller.jpg";
             }
 
 
@@ -111,20 +147,71 @@ function displayImage() {
         }
         
         console.log(newDogArray);
+        
 
        }       
-
-    });   
+       
+    });  
+    
+    
 
 };
 
 setTimeout(function(){
     $(document).on("click", "#next", function(){
-    newDogDisplay();
+    checkAnimation();
+    newDogDisplay();  
     });
 }, 4000);
+
+
+// window.location.href = "details.html"
     // On click listener that will navigate through the dog array when hit(same as left or right arrow key).
     // I put this in a setTimeout function, because errors will show up if hit while the page is waiting for the
     // petfinder api to return the data and populate the array
 
 displayImage();
+
+
+var address = {
+    $t: "2700 Ninth Street",
+    city: "Berkeley",
+    stte: "CA"
+}; // $t is a sample address from the petfinder api(contact section/object)
+
+var streetArr = address.$t.split(" ");
+
+var APIkey = "AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs";
+
+function latLong(){
+
+    $.ajax({
+        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + streetArr[0] + "+ " + streetArr[1] + "+" + streetArr[2] + ",+" + address.city + ",+" + address.stte + "&key=" + APIkey,
+        method: "GET"
+    }).then(function(response){
+        console.log(response);
+        var loc = response.results[0].geometry.location;
+        initMap(loc);
+    });
+    
+    } // calling google geocode api and feeding it an address.  Then calling google maps function(initMap), and feeding it the geolocation(lat and long coordinates)
+
+function initMap(location) {
+    var uluru = location;
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 12,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+  }
+
+  latLong();
+
+ //need an on click listener for swiping page - like button
+    // will take current dog(newdog variable) and display pic and info on upper-left corner of dispaly page
+    // will also need to take the address(if any) from the dog object and plug into latLong function
+
+

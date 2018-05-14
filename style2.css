@@ -2,6 +2,10 @@ html {
     position: relative;
     min-height: 100%;
   }
+  h2{
+      font-size: 22px;
+      font-weight: bold;
+  }
   .card{
       margin: 0 auto;
       background-color: #C4C4C4; 
@@ -97,7 +101,7 @@ html {
 }
 
 .info {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 @media screen and (max-width: 900px) {

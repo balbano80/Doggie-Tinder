@@ -5,6 +5,13 @@ var url = 'https://api.petfinder.com/pet.find';
 var currentDog;
 var newDogArray = [];
 
+// trying to get audio to play on the click button with the dog
+$('#woof').on('click', function(){
+    var music = new Audio();
+    music.src = "images/deepbark.mp3";
+    music.play();  
+})
+
 
 
 function createRando() {
@@ -77,6 +84,7 @@ function displayImage() {
         for (var i =0; i < dogInfo.length; i++) {
             var breed = [];
             var age;
+
 
             if (dogInfo[i].breeds.breed === undefined) {
                 breed.push("mix");

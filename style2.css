@@ -11,10 +11,10 @@ html {
       background-color: #C4C4C4; 
   }
   .glyphicon{
-      background: url("images/glyphicons-3-dog.png") ;
+      background: url("images/dogGlyph.svg") ;
       background-repeat: no-repeat;
       background-position: center;
-      background-size:40px;   
+      background-size:70px;   
       height: 100px;
       width: 100px;
       background-color: #5bc0de;
@@ -26,10 +26,10 @@ html {
       outline: none;
   }
   .glyphicon_two{
-      background-image: url("images/glyphicons-212-arrow-right.png") ;
+      background-image: url("images/next.png") ;
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 40px;
+      background-size: 50px;
       height: 100px;
       width: 100px;
       background-color: #f0ad4e;

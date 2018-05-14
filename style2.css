@@ -2,6 +2,10 @@ html {
     position: relative;
     min-height: 100%;
   }
+  h2{
+      font-size: 22px;
+      font-weight: bold;
+  }
   .card{
       margin: 0 auto;
       background-color: #C4C4C4; 
@@ -13,10 +17,10 @@ html {
       background-size:70px;   
       height: 100px;
       width: 100px;
-      background-color: #5bc0de;
+      background-color: #4bc8d6;
       border-radius: 50px; 
-      margin-right: 25px;
       cursor: pointer;
+      box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 3px 3px 0 rgba(0,0,0,0.19);
   }
   button:focus{
       outline: none;
@@ -31,13 +35,14 @@ html {
       background-color: #f0ad4e;
       border-radius: 50px; 
       cursor: pointer;
-  
+      box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 3px 3px 0 rgba(0,0,0,0.19);
   }
   body{
-      background-color:cadetblue;
-  }
+    background-color: #5d8cae;
+}
   #tag{
-      background-color: 	#fbf7f5;
+      background-color: #FDFEFE;
+      border-style: none;
   }
 
   .textCard{
@@ -45,7 +50,7 @@ html {
       margin: 0 auto;
   }
   .row{
-      font-family: 'Pacifico', cursive;
+      font-family: 'Roboto', sans-serif;;
   
   }
   .mainButtons{
@@ -69,9 +74,11 @@ html {
   .logo{
   width: 150px;
   height: 60px;
+  
   }
   .card-img-top{
-      border: 20px solid 	#fbf7f5;
+      border: 20px solid   #FDFEFE;
+      
   }
   .footer {
     position: absolute;
@@ -92,18 +99,24 @@ html {
   }
 
   img.card-img-top {
-    max-height: 550px;
+    max-height: 430px;
 
 }
-
+#next{
+    margin-left:15px; 
+}
 .info {
-    font-size: 22px;
+    font-size: 16px;
+    font-weight: 200;
 }
 
 
 @media screen and (max-width: 900px) {
     h2 {
         font-size: 20px;
+    }
+    .info{
+        font-size: 18px
     }
     .glyphicon{
     height: 80px;
@@ -120,14 +133,17 @@ html {
     .logo{
         width: 160px;
         }
-        .card{
+    .card{
     width: 75%;
     margin: 0 auto;
 }
 }
 @media screen and (max-width: 620px) {
     h2 {
-        font-size: 15px;
+        font-size: 16px;
+    }
+    .info{
+        font-size:14px;
     }
     .glyphicon{
     height: 50px;
@@ -149,13 +165,16 @@ html {
     h2 {
         font-size: 10px;
     }
+    .info{
+        font-size: 8px;
+    }
     .glyphicon_two {
     height: 30px;
     width:  30px; 
     background-size: 10px;
        
     }
-    .glyphicon{
+    .glyphicon{    
     height: 30px;
     width:  30px;
     background-size: 10px;

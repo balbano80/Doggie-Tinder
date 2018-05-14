@@ -1,5 +1,4 @@
-<!-- Page 3 -->
-<!-- API-key - AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,30 +6,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Details Page</title>
+
+    <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <!-- Boostrap Stylesheet -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <!-- Our own CSS stylesheet -->
-  <!-- <link rel="stylesheet" href="style.css" media="screen"> -->
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-       }
-    </style>
-</head>
+  <link rel="stylesheet" href="details.css" media="screen">
+  <nav class="navbar sticky-top navbar-light bg-light">
+        <!-- <a class="navbar-brand" href="#">Sticky top</a> -->
+        <div>
+                <center><img src="images/dog.png" alt="Give a Dog a Bone Logo" class="img-responsive logo"></center>
+        </div>
+      </nav>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12" id="map">
-            </div>
+       <!-- Top fold of details page --> 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" id="dog-img">
+        Dog image
+    </div>
+    <div class="col-md-6">
+      <div id="map">
+      </div>
+    </div>     
+  </div>               
+</div>
+
+<!-- below the fold on the left form to adobt -->
+<div class="container">
+<div class="jumbotron">
+        <!-- <div class="container"> -->
+                <form>
+                        <div class="form-row">
+                          <div class="form-group col-md-2">
+                            <label for="inputName4">First</label>
+                            <input type="email" class="form-control" id="inputName4" placeholder="Snoop">
+                          </div>
+                          <div class="form-group col-md-2">
+                                <label for="inputName4">Last</label>
+                                <input type="email" class="form-control" id="inputName4" placeholder="Dogg">
+                              </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-4">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="cliff@giveabone.com">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                        <div class="form-group col-md-5">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="form-group col-md-3">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity"placeholder="Long Beach">
+                          </div>
+                          <div class="form-group col-md-1">
+                            <label for="inputState">State</label>
+                            <select id="inputState" class="form-control">
+                              <option selected>CA</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-1">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip" placeholder="90012">
+                          </div>
+                        </div>
+                        <div class="form-row col-sm-2">
+                        <div class="form-group">
+                                <label for="exampleFormControlSelect1">How many kids?</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5+</option>
+                                </select>
+                              </div>
+                        </div>
+                        <div class="form-group row">
+                                <div class="col-sm-1">Allergies?</div>
+                                <div class="col-sm-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                        <label class="form-check-label" for="gridCheck1">
+                                          Yes
+                                        </label>
+                                        
+                                </div>
+                                </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
         </div>
     </div>
-
+    <footer class="footer text-center">
+            <div class="container">
+                <img src="images/dog.png" class="logo" />
+            </div>
+        </footer>
+  <script src="javascript.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs&callback=initMap"
+  async defer></script>
 </body>
-    <script src="javascript.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs"
-    async defer></script>
-    <!-- &callback=initMap -->
 </html>

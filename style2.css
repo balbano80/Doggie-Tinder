@@ -17,10 +17,10 @@ html {
       background-size:70px;   
       height: 100px;
       width: 100px;
-      background-color: #5bc0de;
+      background-color: #4bc8d6;
       border-radius: 50px; 
       cursor: pointer;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 3px 3px 0 rgba(0,0,0,0.19);
   }
   button:focus{
       outline: none;
@@ -35,14 +35,14 @@ html {
       background-color: #f0ad4e;
       border-radius: 50px; 
       cursor: pointer;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 3px 3px 0 rgba(0,0,0,0.19);
   }
   body{
-      /* background-color:cadetblue; */
-    background-color:#F2F4F4;
+    background-color: #5d8cae;
 }
   #tag{
-      background-color: #C4C4C4;
+      background-color: #FDFEFE;
+      border-style: none;
   }
   .textCard{
       width: 50%;
@@ -76,7 +76,7 @@ html {
   
   }
   .card-img-top{
-      border: 20px solid 	#C4C4C4;
+      border: 20px solid   #FDFEFE;
       
   }
   .footer {
@@ -101,7 +101,9 @@ html {
     max-height: 430px;
 
 }
-
+#next{
+    margin-left:15px; 
+}
 .info {
     font-size: 16px;
     font-weight: 200;

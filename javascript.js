@@ -5,6 +5,13 @@ var url = 'https://api.petfinder.com/pet.find';
 var currentDog;
 var newDogArray = [];
 var photo = $(".card-img-top");
+var newDog;
+var detailsBreed = sessionStorage.getItem("likedBreed");
+var detailsAge = sessionStorage.getItem("likedAge");
+var detailsSize = sessionStorage.getItem("likedSize");
+var detailsSex = sessionStorage.getItem("likedSex");
+var detailsShelter = sessionStorage.getItem("likedShelter");
+var detailsImg = sessionStorage.getItem("likedImg");
 
 // trying to get audio to play on the click button with the dog
 $('#woof').on('click', function(event){
@@ -12,11 +19,32 @@ $('#woof').on('click', function(event){
     var music = document.createElement("audio");
     music.setAttribute("src", "images/deepbark.mp3");
     music.play(); 
+
+    sessionStorage.setItem("likedImg", newDog.img);
+    sessionStorage.setItem("likedBreed", newDog.breed.join(", "));
+    sessionStorage.setItem("likedAge", newDog.age);
+    sessionStorage.setItem("likedSize", newDog.size);
+    sessionStorage.setItem("likedSex", newDog.sex);
+    sessionStorage.setItem("likedShelter", newDog.shelter);
+    sessionStorage.setItem("likedZip", newDog.zip);
+
     setTimeout(function(){
-        window.location.href = "details.html"
+        window.location.href = "details.html";
     }, 500)
 })
 
+console.log(detailsBreed);
+console.log(detailsShelter);
+// detailsBreed = sessionStorage.getItem("likedBreed");
+// detailsAge = sessionStorage.getItem("likedAge");
+// detailsSize = sessionStorage.getItem("likedSize");
+// detailsSex = sessionStorage.getItem("likedSex");
+
+$(".details-img-top").attr("src", detailsImg);
+$("#details-breed").html(detailsBreed);
+$("#details-age").html(detailsAge);
+$("#details-size").html(detailsSize);
+$("#details-sex").html(detailsSex);
 
 
 function createRando() {
@@ -29,7 +57,7 @@ function createRando() {
 function newDogDisplay(){
     
     newDogArray.splice(currentDog,1);
-    var newDog = createRando();
+    newDog = createRando();
     console.log(newDog);
     var dogPic = newDog.img;
     var dogBreed = newDog.breed.join(", ");
@@ -40,7 +68,6 @@ function newDogDisplay(){
 
     var dogImg = $("<img css='height: 350px'>")
     dogImg.attr('src', dogPic);
-
   
     $(".card-img-top").attr('src', dogPic);
     $("#breed").html(dogBreed);
@@ -48,9 +75,6 @@ function newDogDisplay(){
     $("#size").html(dogSize);
     $("#sex").html(dogSex);
     // $("#tag").removeClass('magictime boingInUp');
-    
-
-
 }
 
 
@@ -112,6 +136,7 @@ function displayImage() {
         for (var i =0; i < dogInfo.length; i++) {
             var breed = [];
             var age;
+            var shelter;
 
 
             if (dogInfo[i].breeds.breed === undefined) {
@@ -123,25 +148,30 @@ function displayImage() {
             } else {
                 breed.push(dogInfo[i].breeds.breed['$t']);
             };
-
-            
-            
+          
             if (dogInfo[i].media.photos) {
                 var dogImg = (dogInfo[i].media.photos.photo[2]['$t']);
             } else {
                 dogImg = "images/dogFiller.jpg";
             }
 
-
+            if (dogInfo[i].contact.address1.$t === undefined){
+                // console.log("in no address block");
+                shelter = dogInfo[i].contact.zip['$t'];
+            }
+            else{
+                shelter = dogInfo[i].contact.address1.$t;
+            }
            var doggyStuff = {
                img: dogImg,
                breed: breed,
                age: dogInfo[i].age['$t'],
                sex: dogInfo[i].sex['$t'],
                size: dogInfo[i].size['$t'],
-               zip: dogInfo[i].contact.zip['$t']
+               zip: dogInfo[i].contact.zip['$t'],
+               shelter: shelter
            };
-
+        //    console.log(doggyStuff.shelter);
            newDogArray.push(doggyStuff);
            
         }
@@ -173,13 +203,9 @@ setTimeout(function(){
 displayImage();
 
 
-var address = {
-    $t: "2700 Ninth Street",
-    city: "Berkeley",
-    stte: "CA"
-}; // $t is a sample address from the petfinder api(contact section/object)
+var address = sessionStorage.getItem("likedShelter"); // $t is a sample address from the petfinder api(contact section/object)
 
-var streetArr = address.$t.split(" ");
+var streetArr = address.split(" ");
 
 var APIkey = "AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs";
 
@@ -209,9 +235,5 @@ function initMap(location) {
   }
 
   latLong();
-
- //need an on click listener for swiping page - like button
-    // will take current dog(newdog variable) and display pic and info on upper-left corner of dispaly page
-    // will also need to take the address(if any) from the dog object and plug into latLong function
 
 

@@ -18,6 +18,63 @@ body {
 
    }
 
+
+   /* New styling */
+
+
+   /* Need to figure out how to position the donation container within jumbotron container */
+
+   .donation-row {
+
+    position: absolute;
+    float: right;
+    margin: auto;
+    top: 12%;
+    left:50%;
+
+   }
+
+   /* Styling for the actual Donation Container */
+
+   .donateContainer {
+
+    float: right;
+    margin-right: 100px;
+    margin-top: 200px;
+    background-color: white;
+    height: 250px;
+    width: 450px;
+    border: none;
+    border-style: solid;
+    border-radius: 10px;
+
+    padding: 30px;
+}
+
+#WantToHeader {
+
+    text-align: center;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+
+}
+
+#MakeDonation
+
+{
+    text-align: center;
+}
+
+.buttonHolder {
+
+    text-align: center;
+
+
+=======
 #map{
     height: 400px;
     width: 100%;

@@ -19,7 +19,7 @@ html {
       width: 100px;
       background-color: #5bc0de;
       border-radius: 50px; 
-      margin-right: 25px;
+      /* margin-right: 25px; */
       cursor: pointer;
   }
   button:focus{
@@ -101,7 +101,8 @@ html {
 }
 
 .info {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 200;
 }
 
 @media screen and (max-width: 900px) {

@@ -6,6 +6,17 @@ var currentDog;
 var newDogArray = [];
 var photo = $(".card-img-top");
 
+// trying to get audio to play on the click button with the dog
+$('#woof').on('click', function(event){
+    event.preventDefault();
+    var music = document.createElement("audio");
+    music.setAttribute("src", "images/deepbark.mp3");
+    music.play(); 
+    setTimeout(function(){
+        window.location.href = "details.html"
+    }, 500)
+})
+
 
 
 function createRando() {
@@ -102,6 +113,7 @@ function displayImage() {
             var breed = [];
             var age;
 
+
             if (dogInfo[i].breeds.breed === undefined) {
                 breed.push("mix");
             } else if (Array.isArray(dogInfo[i].breeds.breed)) {
@@ -151,6 +163,9 @@ setTimeout(function(){
     newDogDisplay();  
     });
 }, 4000);
+
+
+// window.location.href = "details.html"
     // On click listener that will navigate through the dog array when hit(same as left or right arrow key).
     // I put this in a setTimeout function, because errors will show up if hit while the page is waiting for the
     // petfinder api to return the data and populate the array

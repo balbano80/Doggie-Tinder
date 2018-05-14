@@ -1,15 +1,17 @@
-/* Background image - demo */
     
 body  {
     padding: 0;
     margin: 0;
-    background: linear-gradient(
-    rgba(20,20,20, .6), 
-    rgba(20,20,20, .6)),
-    url("images/dog_owner_1.jpg");
-    background-position:center top;
+    background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)), url("images/dog_owner_1.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
-
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 60px;
+    background-color: #C4C4C4;
+}
 .container {
 
     position: absolute;
@@ -38,9 +40,7 @@ p {
     padding: 0;
     text-align: center;
 }
-
  .container2 {
-
     position: absolute;
     width: 400px;
     height: 150px;

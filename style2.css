@@ -38,8 +38,11 @@ html {
       box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   }
   body{
-      background-color:cadetblue;
-  }
+      /* background-color:cadetblue; */
+    background: url("images/dogback.jpg");
+    background-size: auto;
+    background-repeat: no-repeat; 
+}
   #tag{
       background-color: #C4C4C4;
   }
@@ -72,6 +75,7 @@ html {
   .logo{
   width: 150px;
   height: 60px;
+  
   }
   .card-img-top{
       border: 20px solid 	#C4C4C4;

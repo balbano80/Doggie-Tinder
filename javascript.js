@@ -6,9 +6,10 @@ var currentDog;
 var newDogArray = [];
 
 // trying to get audio to play on the click button with the dog
-$('#woof').on('click', function(){
-    var music = new Audio();
-    music.src = "images/deepbark.mp3";
+$('#woof').on('click', function(event){
+    event.preventDefault();
+    var music = document.createElement("audio");
+    music.setAttribute("src", "images/deepbark.mp3");
     music.play();  
 })
 

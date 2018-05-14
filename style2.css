@@ -39,6 +39,7 @@ html {
   #tag{
       background-color: 	#fbf7f5;
   }
+
   .textCard{
       width: 50%;
       margin: 0 auto;
@@ -98,6 +99,7 @@ html {
 .info {
     font-size: 22px;
 }
+
 
 @media screen and (max-width: 900px) {
     h2 {

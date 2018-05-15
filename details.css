@@ -10,42 +10,6 @@ body {
 
 }
 
-<<<<<<< HEAD
-.footer{
-    background-color: 	#C4C4C4;
-}
-.jumbotron1{
-    background-image: url("http://3.bp.blogspot.com/-3nqnJjk6r3s/TwiXguc_GOI/AAAAAAAABoU/4hfVcz78p0M/s1600/cute-dog-funny-glasses-pet-Favim.com-42794.jpg");
-    color: whitesmoke;
-
-   }
-
-   /* New styling */
-   /* Need to figure out how to position the donation container within jumbotron container */
-   .donation-row {
-    position: absolute;
-    float: right;
-    margin: auto;
-    top: 12%;
-    left:50%;
-   }
-
-   /* Styling for the actual Donation Container */
-
-   .donateContainer {
-
-    /* float: right; */
-    /* margin-right: 100px; */
-    margin-top: 200px;
-    /* background-color: white; */
-    /* height: 250px; */
-    width: 450px;
-    border: none;
-    border-style: solid;
-    border-radius: 10px;
-
-    padding: 30px;
-=======
 .card-img {
     width: 400px;
     height: auto;
@@ -53,20 +17,6 @@ body {
 
 #doginfo {
     background-color: white;
->>>>>>> master
-}
- /* the box that holds the photo with text from dogs  */
-.info{
-    font-size: 18px;
-}
-h2{
-    font-size: 18px;
-}
-.details-img-top{
-    width: 100%;
-}
-.float-left{
-margin-left: 15px;
 }
 
 .card {
@@ -131,6 +81,3 @@ button:focus{
     outline: none;
 }
 
-.details-img-top {
-    max-height: 500px;
-};

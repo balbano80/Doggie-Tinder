@@ -1,44 +1,59 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>index</title>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-   <link rel="stylesheet" href="style.css" media="screen">
- <body>
- <div class="wrapper">
-     <!-- Logo Demo -->
-     <div class="jumbotron">
-         <div>
-             <img src="images/dog.png" alt="Give a Dog a Bone Logo" class="img-responsive logo">
-         </div>
-     </div>
- <!-- Container for App Tilte and brief Description, centered, with stylized text -->
-     <div class="container">
-         <!-- Application Title, bold, large font, styled -->
-         <div class="row">
-             <div class="col-md-12">
-                     <h1>Give-a-Dog a Bone</h1>
-                         <br>
-                     <p>"Give-a-Dog a Bone is a web based application that will find the dog you want, in the location you need... Get started below."</p>
-             </div>
-         </div>
-     </div>
- </div>
-   <!-- The homepage  bottom fold zip code -->
-     <div class="jumbotron1">
-         <center><h1 class="display-4">Get Started</h1></center>
-         <center><p class="lead">Looking for some Doggie love, just enter your zip code below and we will find your new best friend!</p></center>
-         <form class="row justify-content-center">   
-            <div>
-                    <div class="form-group">
-                <input type="text" class="form-control" name="zip" id="zip-code" placeholder="Zip Code">
-                    </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>   
+  <!-- Boostrap Stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css" media="screen">
+<body>
+<div class="wrapper">
+    <!-- Logo Demo -->
+    <div class="jumbotron">
+        <div>
+            <img src="images/dog.png" alt="Give a Dog a Bone Logo" class="img-responsive logo">
+        </div>
+    </div>
+<!-- Container for App Tilte and brief Description, centered, with stylized text -->
+    <div class="container">
+        <!-- Application Title, bold, large font, styled -->
+        <div class="row">
+            <div class="col-md-12">
+                    <h1>Give-a-Dog a Bone</h1>
+                        <br>
+                    <p>"Give-a-Dog a Bone is a web based application that will find the dog you want, in the location you need... Get started below."</p>
             </div>
+        </div>
+    </div>
+</div>
+  <!-- The homepage  bottom fold zip code -->
+
+  <div class="jumbotron1">
+        <!-- <div class="row">
+          <div class="col-md-12"> -->
+              <center><h1 class="display-4">Get Started</h1></center>
+               <center><p class="lead">Looking for some Doggie love, just enter your zip code below and we will find your new best friend!</p></center>
+       
+            <form class="row justify-content-center">   
+                <div class="col-lg-2 col-lg-offset-2 justify-content-center">
+                        <div class="form-group">
+                    <!-- <label for="zipCode" class="form-control">Zip Code </label> -->
+                    <input type="text" class="form-control" name="zip" id="zip-code" placeholder="Zip Code">
+                        </div>
+                </div>
+                <a href="swipe.html">
+                    <button class="btn btn-primary mb-2" type="button" id="show-dog">Find me a Doggie</button>
+                </a>
+            </form>
+          <!-- </div>
+        </div> -->
+ </div>  
  
-  </div>
- 
- </body>
- </html>
+ </div>
+ <script src="javascript.js"></script>
+</body>
+</html>

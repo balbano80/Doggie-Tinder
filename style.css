@@ -14,9 +14,7 @@ body  {
 
 }
 .container {
-
     position: absolute;
-    width: 800px;
     height: 150px;
     top: 42%;
     left: 50%;
@@ -37,7 +35,6 @@ h1 {
     padding: 0;
     text-align: center;
 }
-
 p {
     color: white;
     font-size: 1.1em;
@@ -46,15 +43,15 @@ p {
     padding: 0;
     text-align: center;
 }
- .container2 {
+ /* .container2 {
     position: absolute;
     width: 400px;
     height: 150px;
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-#user-start {
+} */
+/* #user-start {
     background-color: white;
     position: absolute;
     width: 500px;
@@ -69,8 +66,13 @@ p {
     float: left;
     width: 100px;
 
+<<<<<<< HEAD
 }
 .jumbotron {
+=======
+} */
+.jumbotron{
+>>>>>>> master
 background-color: #C4C4C4;
 text-align: center;
 padding: 0;
@@ -94,3 +96,51 @@ width: 200px;
     width: 15%;
     height:38px;
 }
+small{
+    height: 10px;
+}
+@media (max-width: 576px) {
+.form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    }
+    body  {
+        padding: 0;
+        margin: 0;
+        background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)), url("images/dog_owner_1.jpg") no-repeat center center fixed;
+        background-size: cover;
+    }
+    .col-md-12{
+        top:100px;  
+        width:576px;
+    }
+    h1 {
+        color: white;
+        font-size: 40px;
+        font-family: 'Comic Sans', sans-serif;	
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    p {
+        color: white;
+        font-size: 1.0em;
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+.row{
+ margin: auto;
+ width: 100%;
+}
+.display-4{
+    font-size:40px; 
+}
+.lead{
+   font-size:  1.0em;
+}
+}      
+    

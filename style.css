@@ -1,9 +1,11 @@
-    
 body  {
+
     padding: 0;
     margin: 0;
     background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)), url("images/dog_owner_1.jpg") no-repeat center center fixed;
     background-size: cover;
+
+
 }
 .footer{
     position: absolute;
@@ -11,12 +13,9 @@ body  {
     width: 100%;
     line-height: 60px;
     background-color: #C4C4C4;
-
 }
 .container {
-
     position: absolute;
-    width: 800px;
     height: 150px;
     top: 42%;
     left: 50%;
@@ -44,7 +43,6 @@ h1 {
     padding: 0;
     text-align: center;
 }
-
 p {
     color: white;
     font-size: 1.1em;
@@ -53,9 +51,7 @@ p {
     padding: 0;
     text-align: center;
 }
-<<<<<<< HEAD
-.jumbotron{
-=======
+
 
  .container2 {
     position: absolute;
@@ -66,51 +62,87 @@ p {
     transform: translate(-50%, -50%);
 }
 
-#user-start {
-    background-color: white;
-    position: absolute;
-    width: 500px;
-    height: 300px;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-}
-
-#start-app {
-    background-color: white;
-    float: left;
-    width: 100px;
-
-}
 
 .jumbotron {
->>>>>>> master
+
 background-color: #C4C4C4;
 text-align: center;
 padding: 0;
 height: 65px;
 margin-top: 0px;  
 }
-<<<<<<< HEAD
+
 .logo{
 width: 150px;
-=======
 
-.logo {
-width: 200px;
->>>>>>> master
 }
-
 .jumbotron1 {
     text-align: center;
     border-bottom: 0;
     background: url("https://www.publicdomainpictures.net/pictures/180000/velka/dog-foodprint-1463817442Ujb.jpg");
     color: white;
     position: relative;
-    top: 480px;
+
+    top: 510px;
+
 }
 .form-control{
-    width: 100%;
+    width: auto;
     height:38px;
 }
+small{
+    height: 10px;
+}
+@media (max-width: 900px) {
+.jumbotron{
+    background-color: #C4C4C4;
+    text-align: center;
+    padding: 0;
+    height: 65px;
+    margin-top: 0px;  
+    }
+}
+@media (max-width: 576px) {
+.form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    }
+    body  {
+        padding: 0;
+        margin: 0;
+        background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)), url("images/dog_owner_1.jpg") no-repeat center center fixed;
+        background-size: cover;
+    }
+    .col-md-12{
+        top:10px;  
+        width:576px;
+    }
+    h1 {
+        color: white;
+        font-size: 40px;
+        font-family: 'Comic Sans', sans-serif;	
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    p {
+        color: white;
+        font-size: 1.0em;
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+.row{
+ margin: auto;
+ width: 100%;
+}
+.display-4{
+    font-size:40px; 
+}
+.lead{
+   font-size:  1.0em;
+}
+}      

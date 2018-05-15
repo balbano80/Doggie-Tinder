@@ -22,6 +22,9 @@ var detailsSex = sessionStorage.getItem("likedSex");
 var detailsShelter = sessionStorage.getItem("likedShelter");
 var detailsImg = sessionStorage.getItem("likedImg");
 var detailsName = sessionStorage.getItem("likedName");
+var detailsDescrip = sessionStorage.getItem("likedDescrip");
+var detailsEmail =  sessionStorage.getItem("likedEmail");
+var detailsPhone = sessionStorage.getItem("likedPhone");
 
 
 // trying to get audio to play on the click button with the dog
@@ -41,6 +44,10 @@ $('#woof').on('click', function(event){
     sessionStorage.setItem("likedShelter", newDog.shelter);
     sessionStorage.setItem("likedZip", newDog.zip);
     sessionStorage.setItem("likedName", newDog.name);
+    sessionStorage.setItem("likedDescrip", newDog.descrip);
+    sessionStorage.setItem("likedEmail", newDog.email);
+    sessionStorage.setItem("likedPhone", newDog.phone);
+
 
     setTimeout(function(){
         window.location.href = "thirdpage.html";
@@ -60,6 +67,9 @@ $("#details-age").html(detailsAge);
 $("#details-size").html(detailsSize);
 $("#details-sex").html(detailsSex);
 $("#details-name").html(detailsName);
+$("#details-email").html(detailsEmail);
+$("#details-phone").html(detailsPhone);
+$(".details-descrip").html(detailsDescrip);
 
 
 function createRando() {
@@ -81,6 +91,9 @@ function newDogDisplay(){
     var dogSize = newDog.size;
     var dogZip = newDog.zip;
     var dogName = newDog.name;
+    var dogDescrip = newDog.descrip;
+    var dogEmail = newDog.email;
+    var dogPhone = newDog.phone;
     var dogImg = $("<img css='height: 350px'>")
     dogImg.attr('src', dogPic);
   
@@ -177,7 +190,9 @@ function displayImage() {
                zip: dogInfo[i].contact.zip['$t'],
                name: dogInfo[i].name['$t'],
                descrip: dogInfo[i].description['$t'],
-               shelter: shelter
+               shelter: dogInfo[i].shelter,
+               phone: dogInfo[i].contact.phone['$t'],
+               email:dogInfo[i].contact.email['$t']
            };
         //    console.log(doggyStuff.shelter);
            newDogArray.push(doggyStuff);
@@ -217,40 +232,37 @@ setTimeout(function(){
 
 
 
-// var address = sessionStorage.getItem("likedShelter"); // $t is a sample address from the petfinder api(contact section/object)
-// var streetArr = address.split(" ");
+var address = sessionStorage.getItem("likedShelter"); // $t is a sample address from the petfinder api(contact section/object)
+var streetArr = address.split(" ");
 
+var APIkey = "AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs";
 
-// var streetArr = address.$t.split(" ");
+function latLong(){
 
-// var APIkey = "AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs";
-
-// function latLong(){
-
-//     $.ajax({
-//         url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + streetArr[0] + "+ " + streetArr[1] + "+" + streetArr[2] + ",+" + address.city + ",+" + address.stte + "&key=" + APIkey,
-//         method: "GET"
-//     }).then(function(response){
-//         console.log(response);
-//         var loc = response.results[0].geometry.location;
-//         initMap(loc);
-//     });
+    $.ajax({
+        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + streetArr[0] + "+ " + streetArr[1] + "+" + streetArr[2] + ",+" + address.city + ",+" + address.stte + "&key=" + APIkey,
+        method: "GET"
+    }).then(function(response){
+        console.log(response);
+        var loc = response.results[0].geometry.location;
+        initMap(loc);
+    });
     
-//     } // calling google geocode api and feeding it an address.  Then calling google maps function(initMap), and feeding it the geolocation(lat and long coordinates)
+    } // calling google geocode api and feeding it an address.  Then calling google maps function(initMap), and feeding it the geolocation(lat and long coordinates)
 
-// function initMap(location) {
-//     var uluru = location;
-//     var map = new google.maps.Map(document.getElementById('map'), {
-//       zoom: 12,
-//       center: uluru
-//     });
-//     var marker = new google.maps.Marker({
-//       position: uluru,
-//       map: map
-//     });
-//   }
+function initMap(location) {
+    var uluru = location;
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 12,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+  }
 
-//   latLong();
+  latLong();
 
 
 ////test///
@@ -258,3 +270,7 @@ setTimeout(function(){
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
   });
+
+$('#collapseOne').collapse({
+  toggle: true
+})

@@ -5,7 +5,6 @@ var url = 'https://api.petfinder.com/pet.find';
 var currentDog;
 var newDogArray = [];
 var photo = $(".card-img-top");
-<<<<<<< HEAD
 var zip = sessionStorage.getItem('zipcode');
 
 
@@ -15,7 +14,6 @@ $("#show-dog").on("click", function(){
 
 console.log(zip);
 
-=======
 var newDog;
 var detailsBreed = sessionStorage.getItem("likedBreed");
 var detailsAge = sessionStorage.getItem("likedAge");
@@ -23,7 +21,7 @@ var detailsSize = sessionStorage.getItem("likedSize");
 var detailsSex = sessionStorage.getItem("likedSex");
 var detailsShelter = sessionStorage.getItem("likedShelter");
 var detailsImg = sessionStorage.getItem("likedImg");
->>>>>>> 1db22cac816e5fe9fd4e93d4054a766ce7a6d9d3
+
 
 // trying to get audio to play on the click button with the dog
 $('#woof').on('click', function(event){
@@ -87,13 +85,6 @@ function newDogDisplay(){
     $("#age").html(dogAge);
     $("#size").html(dogSize);
     $("#sex").html(dogSex);
-<<<<<<< HEAD
-  
-    
-=======
-    // $("#tag").removeClass('magictime boingInUp');
->>>>>>> 1db22cac816e5fe9fd4e93d4054a766ce7a6d9d3
-}
 
 
 $(document).keydown(function(e) {
@@ -220,18 +211,9 @@ setTimeout(function(){
 
 
 
-<<<<<<< HEAD
-
-// var address = {
-//     $t: "2700 Ninth Street",
-//     city: "Berkeley",
-//     stte: "CA"
-// }; // $t is a sample address from the petfinder api(contact section/object)
-=======
 var address = sessionStorage.getItem("likedShelter"); // $t is a sample address from the petfinder api(contact section/object)
-
 var streetArr = address.split(" ");
->>>>>>> 1db22cac816e5fe9fd4e93d4054a766ce7a6d9d3
+
 
 // var streetArr = address.$t.split(" ");
 

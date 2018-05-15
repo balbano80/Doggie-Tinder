@@ -23,10 +23,17 @@ body  {
     transform: translate(-50%, -50%);
 }
 .col-md-12{
-    top:100px;  
+    top:-20px;  
 }
 .mb-2, .my-2{
     margin-bottom:0!important;
+}
+.btn, .btn-primary, .mb-2{
+    background-color: #4bc8d6;
+    border-color: #4bc8d6;
+}
+.display-4{
+    font-size: 3.0rem;
 }
 h1 {
     color: white;
@@ -46,6 +53,9 @@ p {
     padding: 0;
     text-align: center;
 }
+<<<<<<< HEAD
+.jumbotron{
+=======
 
  .container2 {
     position: absolute;
@@ -75,24 +85,30 @@ p {
 }
 
 .jumbotron {
+>>>>>>> master
 background-color: #C4C4C4;
 text-align: center;
 padding: 0;
-height: 100px;
+height: 65px;
 margin-top: 0px;  
 }
+<<<<<<< HEAD
+.logo{
+width: 150px;
+=======
 
 .logo {
 width: 200px;
+>>>>>>> master
 }
 
 .jumbotron1 {
     text-align: center;
     border-bottom: 0;
-    background-color:cadetblue;
+    background: url("https://www.publicdomainpictures.net/pictures/180000/velka/dog-foodprint-1463817442Ujb.jpg");
     color: white;
     position: relative;
-    top: 700px;
+    top: 480px;
 }
 .form-control{
     width: 15%;

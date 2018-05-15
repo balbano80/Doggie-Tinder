@@ -26,74 +26,105 @@
             <div class="col-lg-4" id="dogpic">
                 <div class="card" style="width: 28rem;">
                     <img class="details-img-top" src="images/dogHolder.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 id="details-name">Card title (Name)</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="card-body"> 
+                    <div id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            More Information
+                                        </button>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body">
+                                        <p class="details-descrip"> I'm looking for a brand new home! Want to help this dog have its day?</p>
+                                        </div>
+                                      </div>
+                                </div>
+                        </div>
+                        
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4" id="doginfo">
-                <div class="card" style="width: 28rem;">
-                    <div class="card-header" style="background-color: white;">
-                        <h4>Details</h4>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Breed: <span id="details-breed"></span> </li>
-                        <li class="list-group-item">Age: <span id="details-age"></span></li>
-                        <li class="list-group-item">Sex: <span id="details-sex"></span></li>
-                        <li class="list-group-item">Size: <span id="details-size"></span></li>
-                        <li class="list-group-item">Location: <span id=""></span></li>
-                        <li class="list-group-item">ID: <span id=""></span></li>
-                        <li class="list-group-item">Additional Info: <span id=""></span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 p-0" id="map">
-                <img style="width: 460px" src="https://vignette.wikia.nocookie.net/badcreepypasta/images/4/40/Google-maps.jpg/revision/latest?cb=20170609215646&format=original">
-
-                <div class="donateContainer">
-                    <h3 id="WantToHeader">Can't Adopt? But still want to throw a dog a bone?</h3>
-
-                    <h6 id="MakeDonation">Make a Donation Below:</h6>
-
-
-                    <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
-                        1
-                    </button>
-                    <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
-                        5
-                    </button>
-                    <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
-                        10
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
+                    <div class="col-lg-4" id="doginfo">
+                        <div class="card" style="width: 28rem;">
+                            <div class="card-header" style="background-color: white;">
+                                <h4>Details</h4>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                 <li class="list-group-item">Name:
+                                    <span id="details-name"></span>
+                                </li>
+                                <li class="list-group-item">Breed:
+                                    <span id="details-breed"></span>
+                                </li>
+                                <li class="list-group-item">Age:
+                                    <span id="details-age"></span>
+                                </li>
+                                <li class="list-group-item">Sex:
+                                    <span id="details-sex"></span>
+                                </li>
+                                <li class="list-group-item">Size:
+                                    <span id="details-size"></span>
+                                </li>
+                                <li class="list-group-item">Location:
+                                    <span id=""></span>
+                                </li>
+                                <li class="list-group-item">Email:
+                                    <span id="details-email"></span>
+                                </li>
+                                <li class="list-group-item"> Phone:
+                                    <span id="details-phone"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 p-0" id="map">
+                        <!-- <img style="width: 460px" src="https://vignette.wikia.nocookie.net/badcreepypasta/images/4/40/Google-maps.jpg/revision/latest?cb=20170609215646&format=original"> -->
 
+                        <div class="donateContainer">
+                            <h3 id="WantToHeader">Can't Adopt? But still want to throw a dog a bone?</h3>
+
+                            <h6 id="MakeDonation">Make a Donation Below:</h6>
+
+
+                            <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
+                                1
+                            </button>
+                            <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
+                                5
+                            </button>
+                            <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
+                                10
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
         </div>
-    </div>
-
-
-    </div>
 
     </div>
     </div>
@@ -101,12 +132,11 @@
 
     <div class="container-fluid p-0" id="bottom">
         <h1 style="text-align: center;">Apply Now!</h1>
-        <div class="row">
-        <div style="margin-left: 680px">
-            <button class="glyphicon2" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
-                aria-controls="collapseExample">
-            </button>
-        </div>
+        <div class="row mx-auto">
+            <div class="mx-auto">
+                <button class="glyphicon2" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                </button>
+            </div>
         </div>
         <div class="collapse" id="collapseExample">
             <div class="card card-body">
@@ -164,7 +194,9 @@
 
         <footer class="footer text-center">
             <div class="container-fluid p-0">
-                <img src="images/dog.png" class="logo" />
+                <a href="index.html">
+                    <img src="images/dog.png" class="logo" />
+                </a>
             </div>
         </footer>
 </body>

@@ -81,3 +81,6 @@ button:focus{
     outline: none;
 }
 
+.details-img-top {
+    max-height: 500px;
+};

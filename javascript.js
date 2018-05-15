@@ -85,7 +85,7 @@ function newDogDisplay(){
     $("#age").html(dogAge);
     $("#size").html(dogSize);
     $("#sex").html(dogSex);
-
+}
 
 $(document).keydown(function(e) {
     switch(e.which) {
@@ -123,7 +123,7 @@ function displayImage() {
             key: apiKey,
             // id: 'CA387',
             animal: 'dog',
-            location:  zip,
+            location:  '94701',
             count: 50,
             output: 'basic',
             format: 'json'
@@ -171,6 +171,8 @@ function displayImage() {
                sex: dogInfo[i].sex['$t'],
                size: dogInfo[i].size['$t'],
                zip: dogInfo[i].contact.zip['$t'],
+               name: dogInfo[i].name['$t'],
+               descrip: dogInfo[i].description['$t'],
                shelter: shelter
            };
         //    console.log(doggyStuff.shelter);
@@ -211,8 +213,8 @@ setTimeout(function(){
 
 
 
-var address = sessionStorage.getItem("likedShelter"); // $t is a sample address from the petfinder api(contact section/object)
-var streetArr = address.split(" ");
+// var address = sessionStorage.getItem("likedShelter"); // $t is a sample address from the petfinder api(contact section/object)
+// var streetArr = address.split(" ");
 
 
 // var streetArr = address.$t.split(" ");
@@ -251,4 +253,4 @@ var streetArr = address.split(" ");
 
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
-  })
+  });

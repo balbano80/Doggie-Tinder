@@ -51,15 +51,30 @@ p {
     padding: 0;
     text-align: center;
 }
-.jumbotron{
+
+
+ .container2 {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.jumbotron {
+
 background-color: #C4C4C4;
 text-align: center;
 padding: 0;
 height: 65px;
 margin-top: 0px;  
 }
+
 .logo{
 width: 150px;
+
 }
 .jumbotron1 {
     text-align: center;
@@ -67,7 +82,9 @@ width: 150px;
     background: url("https://www.publicdomainpictures.net/pictures/180000/velka/dog-foodprint-1463817442Ujb.jpg");
     color: white;
     position: relative;
+
     top: 510px;
+
 }
 .form-control{
     width: auto;

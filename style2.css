@@ -44,6 +44,7 @@ html {
       background-color: #FDFEFE;
       border-style: none;
   }
+
   .textCard{
       width: 50%;
       margin: 0 auto;
@@ -108,6 +109,7 @@ html {
     font-size: 16px;
     font-weight: 200;
 }
+
 
 @media screen and (max-width: 900px) {
     h2 {

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Boostrap Stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Our own CSS stylesheet -->
+    <link rel="stylesheet" href="details.css" media="screen">
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid p-2" id="intro">
+        <h1 style="text-align: center"> Meet Your New Best Friend!</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4" id="dogpic">
+                <div class="card" style="width: 28rem;">
+                    <img class="card-img-top" src="images/dogHolder.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title (Name)</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" id="doginfo">
+                <div class="card" style="width: 28rem;">
+                    <div class="card-header" style="background-color: white;">
+                        <h4>Details</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Breed: <span id="details-breed"></span> </li>
+                        <li class="list-group-item">Age: <span id="details-age"></span></li>
+                        <li class="list-group-item">Sex: <span id="details-sex"></span></li>
+                        <li class="list-group-item">Size: <span id="details-size"></span></li>
+                        <li class="list-group-item">Location: <span id=""></span></li>
+                        <li class="list-group-item">ID: <span id=""></span></li>
+                        <li class="list-group-item">Additional Info: <span id=""></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 p-0" id="map">
+                <img style="width: 460px" src="https://vignette.wikia.nocookie.net/badcreepypasta/images/4/40/Google-maps.jpg/revision/latest?cb=20170609215646&format=original">
+
+                <div class="donateContainer">
+                    <h3 id="WantToHeader">Can't Adopt? But still want to throw a dog a bone?</h3>
+
+                    <h6 id="MakeDonation">Make a Donation Below:</h6>
+
+
+                    <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
+                        1
+                    </button>
+                    <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
+                        5
+                    </button>
+                    <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
+                        10
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    </div>
+    </div>
+
+
+    <div class="container-fluid p-0" id="bottom">
+        <h1 style="text-align: center;">Apply Now!</h1>
+        <div class="row">
+        <div style="margin-left: 680px">
+            <button class="glyphicon2" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                aria-controls="collapseExample">
+            </button>
+        </div>
+        </div>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <div class="col-lg-12" id="form-submission">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputName4">First</label>
+                                <input type="email" class="form-control" id="inputName4" placeholder="Snoop">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputName4">Last</label>
+                                <input type="email" class="form-control" id="inputName4" placeholder="Dogg">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="cliff@giveabone.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <label for="inputAddress">Address</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity" placeholder="Long Beach">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="inputState">State</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>CA</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="inputZip" placeholder="90012">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+                    craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
+            </div>
+
+
+        </div>
+
+        <footer class="footer text-center">
+            <div class="container-fluid p-0">
+                <img src="images/dog.png" class="logo" />
+            </div>
+        </footer>
+</body>
+
+<script src="javascript.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs&callback=initMap" async
+    </html>

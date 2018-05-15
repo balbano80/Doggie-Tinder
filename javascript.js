@@ -5,6 +5,15 @@ var url = 'https://api.petfinder.com/pet.find';
 var currentDog;
 var newDogArray = [];
 var photo = $(".card-img-top");
+var zip = sessionStorage.getItem('zipcode');
+
+
+$("#show-dog").on("click", function(){
+    sessionStorage.setItem('zipcode', $("#zip-code").val());
+});
+
+console.log(zip);
+
 var newDog;
 var detailsBreed = sessionStorage.getItem("likedBreed");
 var detailsAge = sessionStorage.getItem("likedAge");
@@ -13,9 +22,12 @@ var detailsSex = sessionStorage.getItem("likedSex");
 var detailsShelter = sessionStorage.getItem("likedShelter");
 var detailsImg = sessionStorage.getItem("likedImg");
 
+
 // trying to get audio to play on the click button with the dog
 $('#woof').on('click', function(event){
     event.preventDefault();
+    sessionStorage.setItem('test', newDog);
+
     var music = document.createElement("audio");
     music.setAttribute("src", "images/deepbark.mp3");
     music.play(); 
@@ -55,7 +67,7 @@ function createRando() {
 
 
 function newDogDisplay(){
-    
+    displayImage();
     newDogArray.splice(currentDog,1);
     newDog = createRando();
     console.log(newDog);
@@ -65,7 +77,6 @@ function newDogDisplay(){
     var dogSex = newDog.sex;
     var dogSize = newDog.size;
     var dogZip = newDog.zip;
-
     var dogImg = $("<img css='height: 350px'>")
     dogImg.attr('src', dogPic);
   
@@ -74,9 +85,7 @@ function newDogDisplay(){
     $("#age").html(dogAge);
     $("#size").html(dogSize);
     $("#sex").html(dogSex);
-    // $("#tag").removeClass('magictime boingInUp');
 }
-
 
 $(document).keydown(function(e) {
     switch(e.which) {
@@ -101,13 +110,6 @@ function checkAnimation() {
                 next();
             }
         );
-
-        // $("#tag").removeClass('magictime spaceInLeft').delay(25).queue(
-        //     function (next) {
-        //         $(this).addClass('magictime spaceInLeft');
-        //         next();
-        //     }
-        // );
 };
 
 
@@ -121,7 +123,7 @@ function displayImage() {
             key: apiKey,
             // id: 'CA387',
             animal: 'dog',
-            location: '94701',
+            location:  '94701',
             count: 50,
             output: 'basic',
             format: 'json'
@@ -169,6 +171,8 @@ function displayImage() {
                sex: dogInfo[i].sex['$t'],
                size: dogInfo[i].size['$t'],
                zip: dogInfo[i].contact.zip['$t'],
+               name: dogInfo[i].name['$t'],
+               descrip: dogInfo[i].description['$t'],
                shelter: shelter
            };
         //    console.log(doggyStuff.shelter);
@@ -194,46 +198,59 @@ setTimeout(function(){
     });
 }, 4000);
 
+// setTimeout(function(){
+//     $(document).on("click", "#show-dog", function(){
+//     checkAnimation();
+//     newDogDisplay();  
+//     });
+// }, 4000);
+
 
 // window.location.href = "details.html"
     // On click listener that will navigate through the dog array when hit(same as left or right arrow key).
     // I put this in a setTimeout function, because errors will show up if hit while the page is waiting for the
     // petfinder api to return the data and populate the array
 
-displayImage();
 
 
-var address = sessionStorage.getItem("likedShelter"); // $t is a sample address from the petfinder api(contact section/object)
+// var address = sessionStorage.getItem("likedShelter"); // $t is a sample address from the petfinder api(contact section/object)
+// var streetArr = address.split(" ");
 
-var streetArr = address.split(" ");
 
-var APIkey = "AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs";
+// var streetArr = address.$t.split(" ");
 
-function latLong(){
+// var APIkey = "AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs";
 
-    $.ajax({
-        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + streetArr[0] + "+ " + streetArr[1] + "+" + streetArr[2] + ",+" + address.city + ",+" + address.stte + "&key=" + APIkey,
-        method: "GET"
-    }).then(function(response){
-        console.log(response);
-        var loc = response.results[0].geometry.location;
-        initMap(loc);
-    });
+// function latLong(){
+
+//     $.ajax({
+//         url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + streetArr[0] + "+ " + streetArr[1] + "+" + streetArr[2] + ",+" + address.city + ",+" + address.stte + "&key=" + APIkey,
+//         method: "GET"
+//     }).then(function(response){
+//         console.log(response);
+//         var loc = response.results[0].geometry.location;
+//         initMap(loc);
+//     });
     
-    } // calling google geocode api and feeding it an address.  Then calling google maps function(initMap), and feeding it the geolocation(lat and long coordinates)
+//     } // calling google geocode api and feeding it an address.  Then calling google maps function(initMap), and feeding it the geolocation(lat and long coordinates)
 
-function initMap(location) {
-    var uluru = location;
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 12,
-      center: uluru
-    });
-    var marker = new google.maps.Marker({
-      position: uluru,
-      map: map
-    });
-  }
+// function initMap(location) {
+//     var uluru = location;
+//     var map = new google.maps.Map(document.getElementById('map'), {
+//       zoom: 12,
+//       center: uluru
+//     });
+//     var marker = new google.maps.Marker({
+//       position: uluru,
+//       map: map
+//     });
+//   }
 
-  latLong();
+//   latLong();
 
 
+////test///
+
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  });

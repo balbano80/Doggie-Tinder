@@ -252,5 +252,3 @@ var streetArr = address.split(" ");
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
   })
-
-

@@ -2,15 +2,6 @@
 body  {
     padding: 0;
     margin: 0;
-<<<<<<< HEAD
-    
-    background: linear-gradient(
-                     rgba(20,20,20, .6), 
-                     rgba(20,20,20, .6)),
-                     url("images/dog_owner_1.jpg");
-    background-position:center top;
-
-=======
     background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)), url("images/dog_owner_1.jpg") no-repeat center center fixed;
     background-size: cover;
 }
@@ -20,7 +11,7 @@ body  {
     width: 100%;
     line-height: 60px;
     background-color: #C4C4C4;
->>>>>>> 1db22cac816e5fe9fd4e93d4054a766ce7a6d9d3
+
 }
 .container {
 
@@ -79,16 +70,18 @@ p {
     width: 100px;
 
 }
-.jumbotron{
+.jumbotron {
 background-color: #C4C4C4;
 text-align: center;
 padding: 0;
 height: 100px;
 margin-top: 0px;  
 }
-.logo{
+
+.logo {
 width: 200px;
 }
+
 .jumbotron1 {
     text-align: center;
     border-bottom: 0;

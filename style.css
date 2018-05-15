@@ -107,9 +107,6 @@ small{
         top:100px;  
         width:576px;
     }
-    .mb-2, .my-2{
-        margin-bottom:0!important;
-    }
     h1 {
         color: white;
         font-size: 40px;
@@ -131,6 +128,11 @@ small{
  margin: auto;
  width: 100%;
 }
-
+.display-4{
+    font-size:40px; 
+}
+.lead{
+   font-size:  1.0em;
+}
 }      
     

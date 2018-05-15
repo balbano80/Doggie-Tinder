@@ -21,6 +21,7 @@ var detailsSize = sessionStorage.getItem("likedSize");
 var detailsSex = sessionStorage.getItem("likedSex");
 var detailsShelter = sessionStorage.getItem("likedShelter");
 var detailsImg = sessionStorage.getItem("likedImg");
+var detailsName = sessionStorage.getItem("likedName");
 
 
 // trying to get audio to play on the click button with the dog
@@ -39,6 +40,7 @@ $('#woof').on('click', function(event){
     sessionStorage.setItem("likedSex", newDog.sex);
     sessionStorage.setItem("likedShelter", newDog.shelter);
     sessionStorage.setItem("likedZip", newDog.zip);
+    sessionStorage.setItem("likedName", newDog.name);
 
     setTimeout(function(){
         window.location.href = "thirdpage.html";
@@ -57,6 +59,7 @@ $("#details-breed").html(detailsBreed);
 $("#details-age").html(detailsAge);
 $("#details-size").html(detailsSize);
 $("#details-sex").html(detailsSex);
+$("#details-name").html(detailsName);
 
 
 function createRando() {
@@ -77,6 +80,7 @@ function newDogDisplay(){
     var dogSex = newDog.sex;
     var dogSize = newDog.size;
     var dogZip = newDog.zip;
+    var dogName = newDog.name;
     var dogImg = $("<img css='height: 350px'>")
     dogImg.attr('src', dogPic);
   
@@ -123,7 +127,7 @@ function displayImage() {
             key: apiKey,
             // id: 'CA387',
             animal: 'dog',
-            location:  '94701',
+            location:  zip,
             count: 50,
             output: 'basic',
             format: 'json'
@@ -196,7 +200,7 @@ setTimeout(function(){
     checkAnimation();
     newDogDisplay();  
     });
-}, 4000);
+}, 2000);
 
 // setTimeout(function(){
 //     $(document).on("click", "#show-dog", function(){

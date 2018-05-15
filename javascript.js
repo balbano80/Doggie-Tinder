@@ -41,7 +41,7 @@ $('#woof').on('click', function(event){
     sessionStorage.setItem("likedZip", newDog.zip);
 
     setTimeout(function(){
-        window.location.href = "details.html";
+        window.location.href = "thirdpage.html";
     }, 500)
 })
 

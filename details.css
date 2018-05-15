@@ -1,24 +1,99 @@
 body {
-    background-color:cadetblue;
+    background-color: white;
+    position: relative;
+    min-height: 100%;
+    width: 1440px;
+  
 
 
 }
-.jumbotron{
-    background-color: #C4C4C4;
-    
-   }
+
+#intro {
+    background-color: #5d8cae;
+    color: white;
+}
+
+#dogpic {
+    background-color: white;
+
+
+}
+
+.card-img {
+    width: 400px;
+    height: auto;
+}
+
+#doginfo {
+    background-color: white;
+}
+
+.card {
+    border: none;
+}
+
+
+
+#map {
+    background-color:white;
+  
+}
+
+#form-submission {
+    background-color: grey;
+    height: 500px;
+}
+
+#dogbone {
+    background-color: purple;
+}
+
 
 .footer{
     background-color: 	#C4C4C4;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Set the fixed height of the footer here */
+    line-height: 60px; /* Vertically center the text there */
     
 }
-.jumbotron1{
-    background-image: url("http://3.bp.blogspot.com/-3nqnJjk6r3s/TwiXguc_GOI/AAAAAAAABoU/4hfVcz78p0M/s1600/cute-dog-funny-glasses-pet-Favim.com-42794.jpg");
-    color: whitesmoke;
 
-   }
 
 #map{
     height: 400px;
     width: 100%;
 }
+
+.glyphicon{
+    background: url("images/bone.png") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    background-size:80px;   
+    height: 100px;
+    width: 100px;
+    background-color: #4bc8d6;
+    border-radius: 25px; 
+    cursor: pointer;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 3px 3px 0 rgba(0,0,0,0.19);
+    margin-right: 25px;
+}
+
+.glyphicon2{
+    background: url("images/dogGlyph.svg") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:70px;   
+    height: 100px;
+    width: 100px;
+    background-color: #4bc8d6;
+    border-radius: 50px; 
+    cursor: pointer;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 3px 3px 0 rgba(0,0,0,0.19);
+}
+
+button:focus{
+    outline: none;
+}
+

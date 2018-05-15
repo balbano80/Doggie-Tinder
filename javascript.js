@@ -223,3 +223,10 @@ setTimeout(function(){
     // will also need to take the address(if any) from the dog object and plug into latLong function
 
 
+////test///
+
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
+
+

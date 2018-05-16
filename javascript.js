@@ -10,6 +10,8 @@ var zip = sessionStorage.getItem('zipcode');
 
 $("#show-dog").on("click", function(){
     sessionStorage.setItem('zipcode', $("#zip-code").val());
+    displayImage();
+    newDogDisplay();
 });
 
 console.log(zip);
@@ -22,6 +24,10 @@ var detailsSex = sessionStorage.getItem("likedSex");
 var detailsShelter = sessionStorage.getItem("likedShelter");
 var detailsImg = sessionStorage.getItem("likedImg");
 var detailsName = sessionStorage.getItem("likedName");
+var detailsPhone = sessionStorage.getItem("likedPhone");
+var detailsEmail = sessionStorage.getItem("likedEmail");
+
+displayImage();
 
 
 // trying to get audio to play on the click button with the dog
@@ -41,7 +47,8 @@ $('#woof').on('click', function(event){
     sessionStorage.setItem("likedShelter", newDog.shelter);
     sessionStorage.setItem("likedZip", newDog.zip);
     sessionStorage.setItem("likedName", newDog.name);
-
+    sessionStorage.setItem("likedPhone", newDog.phone);
+    sessionStorage.setItem("likedEmail", newDog.email);
     setTimeout(function(){
         window.location.href = "thirdpage.html";
     }, 500)
@@ -60,6 +67,8 @@ $("#details-age").html(detailsAge);
 $("#details-size").html(detailsSize);
 $("#details-sex").html(detailsSex);
 $("#details-name").html(detailsName);
+$("#details-phone").html(detailsPhone);
+$("#details-email").html(detailsEmail);
 
 
 function createRando() {
@@ -70,7 +79,6 @@ function createRando() {
 
 
 function newDogDisplay(){
-    displayImage();
     newDogArray.splice(currentDog,1);
     newDog = createRando();
     console.log(newDog);
@@ -81,6 +89,8 @@ function newDogDisplay(){
     var dogSize = newDog.size;
     var dogZip = newDog.zip;
     var dogName = newDog.name;
+    var dogPhone = newDog.phone;
+    var dogEmail = newDog.email;
     var dogImg = $("<img css='height: 350px'>")
     dogImg.attr('src', dogPic);
   
@@ -177,7 +187,8 @@ function displayImage() {
                zip: dogInfo[i].contact.zip['$t'],
                name: dogInfo[i].name['$t'],
                descrip: dogInfo[i].description['$t'],
-               shelter: shelter
+               phone: dogInfo[i].contact.phone['$t'],
+               email: dogInfo[i].contact.email['$t']
            };
         //    console.log(doggyStuff.shelter);
            newDogArray.push(doggyStuff);
@@ -197,64 +208,119 @@ function displayImage() {
 
 setTimeout(function(){
     $(document).on("click", "#next", function(){
-    checkAnimation();
     newDogDisplay();  
+    checkAnimation();
     });
 }, 2000);
 
-// setTimeout(function(){
-//     $(document).on("click", "#show-dog", function(){
-//     checkAnimation();
-//     newDogDisplay();  
-//     });
-// }, 4000);
+///////////////////////////////////////GOOGLE API///////////////////////////////////////////////////////
 
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBSng1dVjOhkqyx8gzLZ4pS8snSbF6N4PI",
+    authDomain: "doggie-tinder-4d87b.firebaseapp.com",
+    databaseURL: "https://doggie-tinder-4d87b.firebaseio.com",
+    projectId: "doggie-tinder-4d87b",
+    storageBucket: "doggie-tinder-4d87b.appspot.com",
+    messagingSenderId: "23510924318"
+  };
+  firebase.initializeApp(config);
 
-// window.location.href = "details.html"
-    // On click listener that will navigate through the dog array when hit(same as left or right arrow key).
-    // I put this in a setTimeout function, because errors will show up if hit while the page is waiting for the
-    // petfinder api to return the data and populate the array
+  var database = firebase.database();
 
+var address = sessionStorage.getItem("likedZip");
 
+console.log("address: " + address);
+var APIkey = "AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs";
 
-// var address = sessionStorage.getItem("likedShelter"); // $t is a sample address from the petfinder api(contact section/object)
-// var streetArr = address.split(" ");
+function latLong(){
 
+   $.ajax({
+       url: "https://maps.googleapis.com/maps/api/geocode/json?address="+ address + ",PL&key=" + APIkey,
+       method: "GET"
+   }).then(function(response){
+       console.log(response);
+       var loc = response.results[0].geometry.location;
+       initMap(loc);
+   });
+   
+   } // calling google geocode api and feeding it an address(zipcode now).  Then calling google maps function(initMap), and feeding it the geolocation(lat and long coordinates)
 
-// var streetArr = address.$t.split(" ");
-
-// var APIkey = "AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs";
-
-// function latLong(){
-
-//     $.ajax({
-//         url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + streetArr[0] + "+ " + streetArr[1] + "+" + streetArr[2] + ",+" + address.city + ",+" + address.stte + "&key=" + APIkey,
-//         method: "GET"
-//     }).then(function(response){
-//         console.log(response);
-//         var loc = response.results[0].geometry.location;
-//         initMap(loc);
-//     });
-    
-//     } // calling google geocode api and feeding it an address.  Then calling google maps function(initMap), and feeding it the geolocation(lat and long coordinates)
-
-// function initMap(location) {
-//     var uluru = location;
-//     var map = new google.maps.Map(document.getElementById('map'), {
-//       zoom: 12,
-//       center: uluru
-//     });
-//     var marker = new google.maps.Marker({
-//       position: uluru,
-//       map: map
-//     });
-//   }
-
-//   latLong();
+function initMap(location) {
+   var uluru = location;
+   var map = new google.maps.Map(document.getElementById('map'), {
+     zoom: 12,
+     center: uluru
+   });
+   var marker = new google.maps.Marker({
+     position: uluru,
+     map: map
+   });
+ }
+ $(function(){
+   latLong();
+ });
 
 
 ////test///
 
 $('#myModal').on('shown.bs.modal', function () {
+   $('#myInput').trigger('focus')
+ });
+
+ function addAdoptee(){
+   var firstName = $("#first-name").val().trim();
+   var lastName = $("#last-name").val().trim();
+    var email = $("#email").val().trim();
+   var address = $("#address").val().trim();
+   var city = $("#city").val().trim();
+   var state = $("#state").val().trim();
+   var zip = $("#zip").val().trim();
+
+   database.ref().push({
+     firstName: firstName,
+     lastName: lastName,
+     email: email,
+     address: address,
+     city: city,
+     state: state,
+     zip: zip
+   })
+   // , function(errorObj){
+   //   console.log("Error: " + errorObj.code);
+   // });
+
+   $("#first-name").val("");
+   $("#last-name").val("");
+   $("#email").val("");
+   $("#address").val("");
+   $("#city").val("");
+   $("#state").val("");
+   $("#zip").val("");
+}
+
+$(document).on("click", ".adoptee", function(event){
+   event.preventDefault();
+   addAdoptee();
+ });
+
+$('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
   });
+
+  ///////////////////// animation /////////////////////
+
+  $('#applybutton').hover(function () {
+    $(this).toggleClass('magictime puffOut', 1000);
+
+  });
+
+
+  
+
+//   $("#applybutton").removeClass('magictime puffOut').delay(25).queue(
+//     function (next) {
+//         $(this).addClass('magictime puffOut');
+//         next();
+//     }
+// );

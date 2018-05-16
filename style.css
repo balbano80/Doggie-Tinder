@@ -1,4 +1,3 @@
-    
 body  {
     padding: 0;
     margin: 0;
@@ -9,35 +8,38 @@ body  {
     position: absolute;
     bottom: 0;
     width: 100%;
+    height: 60px;
     line-height: 60px;
     background-color: #C4C4C4;
-
 }
 .container {
-
     position: absolute;
-    width: 800px;
     height: 150px;
     top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 .col-md-12{
-    top:100px;  
+    top:-20px;  
 }
 .mb-2, .my-2{
     margin-bottom:0!important;
 }
+.btn, .btn-primary, .mb-2{
+    background-color: #4bc8d6;
+    border-color: #4bc8d6;
+}
+.display-4{
+    font-size: 3.0rem;
+}
 h1 {
     color: white;
     font-size: 5em;
-    font-family: 'Comic Sans', sans-serif;	
-    font-style: italic;
+    font-family: 'Fredoka One', cursive;
     margin: 0;
     padding: 0;
     text-align: center;
 }
-
 p {
     color: white;
     font-size: 1.1em;
@@ -46,55 +48,81 @@ p {
     padding: 0;
     text-align: center;
 }
-
- .container2 {
-    position: absolute;
-    width: 400px;
-    height: 150px;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#user-start {
-    background-color: white;
-    position: absolute;
-    width: 500px;
-    height: 300px;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-}
-
-#start-app {
-    background-color: white;
-    float: left;
-    width: 100px;
-
-}
-
-.jumbotron {
+.jumbotron{
 background-color: #C4C4C4;
 text-align: center;
 padding: 0;
-height: 100px;
+height: 65px;
 margin-top: 0px;  
 }
-
-.logo {
-width: 200px;
+.logo{
+width: 150px;
 }
-
 .jumbotron1 {
     text-align: center;
     border-bottom: 0;
-    background-color:cadetblue;
+    background: url("https://www.publicdomainpictures.net/pictures/180000/velka/dog-foodprint-1463817442Ujb.jpg");
     color: white;
     position: relative;
-    top: 700px;
+    top: 585px;
 }
 .form-control{
-    width: 100%;
+    width: auto;
     height:38px;
 }
+small{
+    height: 10px;
+}
+@media (max-width: 900px) {
+.jumbotron{
+    background-color: #C4C4C4;
+    text-align: center;
+    padding: 0;
+    height: 65px;
+    margin-top: 0px;  
+    }
+}
+@media (max-width: 576px) {
+.form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    }
+    body  {
+        padding: 0;
+        margin: 0;
+        background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)), url("images/dog_owner_1.jpg") no-repeat center center fixed;
+        background-size: cover;
+    }
+    .col-md-12{
+        top:10px;  
+        width:576px;
+    }
+    h1 {
+        color: white;
+        font-size: 40px;
+        font-family: 'Comic Sans', sans-serif;	
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    p {
+        color: white;
+        font-size: 1.0em;
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+.row{
+ margin: auto;
+ width: 100%;
+}
+.display-4{
+    font-size:40px; 
+}
+.lead{
+   font-size:  1.0em;
+}
+}      

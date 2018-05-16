@@ -4,6 +4,15 @@ body {
     min-height: 100%;
     margin-bottom: 60px;
 }
+h1 {
+    font-family: 'Fredoka One', cursive;
+    margin: 0;
+}
+
+#intro {
+    background-color: #4bc8d6;
+    color: white;
+}
 
 #dogpic {
     background-color: white;
@@ -44,7 +53,7 @@ body {
     position: absolute;
     bottom: -80px;
     width: 100%;
-    height: 70px; /* Set the fixed height of the footer here */
+    height: 80px; /* Set the fixed height of the footer here */
     line-height: 70px; /* Vertically center the text there */
     
 }
@@ -61,7 +70,7 @@ body {
     border-radius: 25px; 
     cursor: pointer;
     box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 3px 3px 0 rgba(0,0,0,0.19);
-    margin-right: 25px;
+    margin-right: 15px;
 }
 
 .glyphicon2{
@@ -76,8 +85,60 @@ body {
     cursor: pointer;
     box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 3px 3px 0 rgba(0,0,0,0.19);
 }
+
+#bonehead {
+    position: relative;
+    bottom: 5px;
+    width: 40px;
+    height: 40px;
+    
+}
+
+#bonehead2 {
+    position: relative;
+    bottom: 5px;
+    width: 40px;
+    height: 40px;
+    
+}
    
 button:focus{
     outline: none;
 }
 
+#map {
+    height: 200px;
+}
+
+.details-img-top {
+    max-height: 500px;
+}
+
+#apply {
+    background: #4bc8d6;
+    color: white;
+    margin: 0;
+    padding-bottom: 5px;
+    
+}
+
+
+#divide {
+    padding: 0.5em;
+    background: url("https://www.publicdomainpictures.net/pictures/180000/velka/dog-foodprint-1463817442Ujb.jpg");
+    background-size: cover;
+}
+
+#form-submission {
+    background: url("https://www.publicdomainpictures.net/pictures/180000/velka/dog-foodprint-1463817442Ujb.jpg");
+    background-size: cover;
+    padding-top: 15px;
+    color: white;
+    font-size: 20px;
+    height: 440px;
+
+}
+
+#ModalCenter {
+    color: black;
+}

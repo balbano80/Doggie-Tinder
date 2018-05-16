@@ -11,60 +11,84 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <!-- Boostrap Stylesheet -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- Our own CSS stylesheet -->
     <link rel="stylesheet" href="details.css" media="screen">
+    <link rel="stylesheet" href="magic.css">
 </head>
 
 <body>
     <div class="jumbotron jumbotron-fluid p-2" id="intro">
-        <h1 style="text-align: center"> Meet Your New Best Friend!</h1>
+        <h1 style="text-align: center">
+            <img id="bonehead" src="images/ bonehead.png"> Meet Your New Best Friend!
+            <img id="bonehead2" src="images/bonehead2.png">
+        </h1>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid pb-3" id="main">
         <div class="row">
             <div class="col-lg-4" id="dogpic">
                 <div class="card" style="width: 28rem;">
                     <img class="details-img-top" src="images/dogHolder.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h5 id="details-name">Card title (Name)</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4" id="doginfo">
-                <div class="card" style="width: 28rem;">
+                <div class="card" style="width: 22rem;">
                     <div class="card-header" style="background-color: white;">
                         <h4>Details</h4>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Breed: <span id="details-breed"></span> </li>
-                        <li class="list-group-item">Age: <span id="details-age"></span></li>
-                        <li class="list-group-item">Sex: <span id="details-sex"></span></li>
-                        <li class="list-group-item">Size: <span id="details-size"></span></li>
-                        <li class="list-group-item">Location: <span id=""></span></li>
-                        <li class="list-group-item">ID: <span id=""></span></li>
-                        <li class="list-group-item">Additional Info: <span id=""></span></li>
+                        <li class="list-group-item">Name:
+                            <span id="details-name"></span>
+                        </li>
+                        <li class="list-group-item">Breed:
+                            <span id="details-breed"></span>
+                        </li>
+                        <li class="list-group-item">Age:
+                            <span id="details-age"></span>
+                        </li>
+                        <li class="list-group-item">Sex:
+                            <span id="details-sex"></span>
+                        </li>
+                        <li class="list-group-item">Size:
+                            <span id="details-size"></span>
+                        </li>
+                        <li class="list-group-item">Phone:
+                            <span id="details-phone"></span>
+                        </li>
+                        <li class="list-group-item">Email:
+                            <span id="details-email"></span>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4 p-0" id="map">
-                <img style="width: 460px" src="https://vignette.wikia.nocookie.net/badcreepypasta/images/4/40/Google-maps.jpg/revision/latest?cb=20170609215646&format=original">
+            <div class="col-lg-4 p-0">
+                <div id="map">
 
-                <div class="donateContainer">
-                    <h3 id="WantToHeader">Can't Adopt? But still want to throw a dog a bone?</h3>
+                </div>
+                <div class="donateContainer mt-2">
+                    <h2 id="WantToHeader">Can't Adopt?</h2>
+                    <p> You can still help this dog have its day! By throwing this dog a bone, you can help ensure that it has
+                        a place to stay and food to eat</p>
 
                     <h6 id="MakeDonation">Make a Donation Below:</h6>
 
 
                     <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
-                        1
+                        $1
                     </button>
                     <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
-                        5
+                        $5
                     </button>
                     <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
-                        10
+                        $10
+                    </button>
+                    <button type="button" class="glyphicon" data-toggle="modal" data-target="#exampleModalCenter">
+                        $25
                     </button>
 
                     <!-- Modal -->
@@ -72,13 +96,13 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Thank You For Giving a Bone!</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
+                                    We'll be sure that your donation will help ensure your new friend gets the love and attention they deserve!
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -93,6 +117,10 @@
     </div>
 
 
+
+
+
+
     </div>
 
     </div>
@@ -100,75 +128,107 @@
 
 
     <div class="container-fluid p-0" id="bottom">
-        <h1 style="text-align: center;">Apply Now!</h1>
-        <div class="row">
-        <div style="margin-left: 680px">
-            <button class="glyphicon2" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
-                aria-controls="collapseExample">
-            </button>
-        </div>
+        <h1 id="apply" style="text-align: center;">Apply Now!</h1>
+        <div class="row" id="divide">
+            <div id="applybutton" class="mx-auto">
+                <button class="glyphicon2" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                </button>
+            </div>
         </div>
         <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-                <div class="col-lg-12" id="form-submission">
+            <div class="card card-body" id="colform">
+                <div class="col-lg-12 mx-auto" id="form-submission">
                     <form>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputName4">First</label>
-                                <input type="email" class="form-control" id="inputName4" placeholder="Snoop">
+                                <input type="text" class="form-control" id="first-name" placeholder="Snoop">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputName4">Last</label>
-                                <input type="email" class="form-control" id="inputName4" placeholder="Dogg">
+                                <input type="text" class="form-control" id="last-name" placeholder="Dogg">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-8">
                                 <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="cliff@giveabone.com">
+                                <input type="email" class="form-control" id="email" placeholder="cliff@giveabone.com">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-8">
                                 <label for="inputAddress">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                <input type="text" class="form-control" id="address" placeholder="1234 Main St">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="inputCity">City</label>
-                                <input type="text" class="form-control" id="inputCity" placeholder="Long Beach">
+                                <input type="text" class="form-control" id="city" placeholder="Long Beach">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="inputState">State</label>
-                                <select id="inputState" class="form-control">
+                                <select id="state" class="form-control">
                                     <option selected>CA</option>
                                     <option>...</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="inputZip">Zip</label>
-                                <input type="text" class="form-control" id="inputZip" placeholder="90012">
+                                <input type="text" class="form-control" id="zip" placeholder="90012">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+
+                        <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Thank You For Your Application!</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        We will be sure to send your information to the shelter and contact you promptly with the next step!
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mx-auto">
+                                <button type="submit" class="adoptee btn" data-toggle="modal" data-target="#ModalCenter">Submit</button>
+                            </div>
+
                     </form>
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
-                    craft beer labore wes anderson cred nesciunt sapiente ea proident.
+
+
+                    
                 </div>
+
+
             </div>
-
-
         </div>
+
+
 
         <footer class="footer text-center">
             <div class="container-fluid p-0">
-                <img src="images/dog.png" class="logo" />
+                <a href="index.html">
+                    <img src="images/dog.png" class="logo" />
+                </a>
+
             </div>
         </footer>
 </body>
 
 <script src="javascript.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiwCxInV3d_DUB25n92pDjHmXsTSlajYs&callback=initMap" async
-    </html>
+    defer></script>
+
+</html>
